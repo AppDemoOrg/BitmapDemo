@@ -8,7 +8,7 @@ import com.orhanobut.logger.Logger;
 /**
  * Created by huangweiqi on 29/04/2018.
  */
-public class BitmapApplication extends Application {
+public class BitmapApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

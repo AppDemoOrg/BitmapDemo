@@ -1,10 +1,12 @@
-package com.abt.bitmap;
+package com.abt.bitmap.activity;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.abt.bitmap.R;
 
 public class MainActivity extends AppCompatActivity {
 
