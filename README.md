@@ -1,9 +1,10 @@
 # BitmapDemo
 
 ## TODO  
-1、jpg/png占内存大小计算方式    
 3、加载大图   
 4、mipmap和drawable区别
+
+### JPG/PNG占内存大小计算方式
 
 ### 8888和565区别
 A：透明度，R：红色，G：绿，B：蓝   

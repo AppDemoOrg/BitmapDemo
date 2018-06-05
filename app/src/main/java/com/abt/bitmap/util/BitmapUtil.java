@@ -1,6 +1,7 @@
 package com.abt.bitmap.util;
 
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.ThumbnailUtils;
@@ -39,6 +40,12 @@ public class BitmapUtil {
             e.printStackTrace();
         }
         return image;
+    }
+
+    public static Bitmap getBitmapFromDrawable(int id) {
+        Resources res = BitmapApp.getAppContext().getResources();
+        Bitmap bitmap = BitmapFactory.decodeResource(res, id);
+        return bitmap;
     }
 
     /**

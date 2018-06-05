@@ -83,7 +83,7 @@ public class ImageUtil {
 		return BitmapFactory.decodeFile(path, options);
 	}
 	
-	public static Bitmap getBitmapFromSDCard(String path, String photoName) {
+	public static Bitmap getBitmapFromPath(String path, String photoName) {
 		Bitmap photo = BitmapFactory.decodeFile(path + "/" + photoName);
 		if (photo == null) {
 			return null;

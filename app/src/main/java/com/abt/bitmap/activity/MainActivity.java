@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
+import com.abt.bitmap.test.TestBitmapSize;
 import com.abt.bitmap.util.BitmapUtil;
 import com.orhanobut.logger.Logger;
 
@@ -25,19 +26,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String path = "ic_launcher.png";
-        Bitmap map = BitmapUtil.getBitmapFromAssetsFile(path);
-        long size = BitmapUtil.getBitmapSize(map);
-        System.out.println("size = "+size/1024+"KB");
+
 
 /*        BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true; // 这个属性保证了仅仅解析尺寸类型，而不必加载图片
-        BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher, options);
+        BitmapFactory.decodeResource(getResources(), R.mipmap.xxhdpi, options);
         int imageHeight = options.outHeight;
         int imageWidth = options.outWidth;
         String imageType = options.outMimeType;*/
 
         //getSmallBitmap(mPath);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        TestBitmapSize.testFilePostfix();
+        TestBitmapSize.testFileLocation();
     }
 
     public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight) {
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        BitmapUtil.saveBitmap(bm, mBasePath+"test.jpg", 100);
+        BitmapUtil.saveBitmap(bm, mBasePath+"xxhdpi.jpg", 100);
         return bm;
     }
 
