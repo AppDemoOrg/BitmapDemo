@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String path = "ic_launcher.png";
+        Bitmap map = BitmapUtil.getBitmapFromAssetsFile(path);
+        long size = BitmapUtil.getBitmapSize(map);
+        System.out.println("size = "+size/1024+"KB");
+
 /*        BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true; // 这个属性保证了仅仅解析尺寸类型，而不必加载图片
         BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher, options);
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         int imageWidth = options.outWidth;
         String imageType = options.outMimeType;*/
 
-        getSmallBitmap(mPath);
+        //getSmallBitmap(mPath);
     }
 
     public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight) {
