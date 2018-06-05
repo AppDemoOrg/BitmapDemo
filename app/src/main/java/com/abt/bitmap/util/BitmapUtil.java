@@ -22,6 +22,9 @@ import java.io.InputStream;
  */
 public class BitmapUtil {
 
+    /**
+     * 获取bitmap大小
+     */
     public static final long getBitmapSize(Bitmap map) {
         return map.getByteCount();
     }
@@ -42,6 +45,9 @@ public class BitmapUtil {
         return image;
     }
 
+    /**
+     * 从drawable中读取图片
+     */
     public static Bitmap getBitmapFromDrawable(int id) {
         Resources res = BitmapApp.getAppContext().getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(res, id);

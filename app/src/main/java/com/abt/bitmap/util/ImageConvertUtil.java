@@ -24,7 +24,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ImageUtil {
+public class ImageConvertUtil {
 	
 	public static Bitmap drawableToBitmap(Drawable drawable) { 
 		if (drawable != null) {

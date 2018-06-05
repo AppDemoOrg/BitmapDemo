@@ -5,7 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
@@ -25,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 /*        BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true; // 这个属性保证了仅仅解析尺寸类型，而不必加载图片
         BitmapFactory.decodeResource(getResources(), R.mipmap.xxhdpi, options);
@@ -58,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         return BitmapFactory.decodeResource(res, resId, options);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB_MR1)
     public static Bitmap getSmallBitmap(String filePath) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         return bm;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ECLAIR)
     private static int readPictureDegree(String path) {
         int degree  = 0;
         try {
