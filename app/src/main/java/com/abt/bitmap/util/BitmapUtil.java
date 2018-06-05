@@ -1,19 +1,45 @@
 package com.abt.bitmap.util;
 
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.ThumbnailUtils;
 import android.text.TextUtils;
 
+import com.abt.bitmap.BitmapApp;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * Created by huangweiqi on 15/05/2018.
+ * @描述： @BitmapUtil
+ * @作者： @黄卫旗
+ * @创建时间： @05/06/2018
  */
 public class BitmapUtil {
+
+    public static final long getBitmapSize(Bitmap map) {
+        return map.getByteCount();
+    }
+
+    /**
+     * 从Assets中读取图片
+     */
+    public static Bitmap getBitmapFromAssetsFile(String fileName) {
+        Bitmap image = null;
+        AssetManager am = BitmapApp.getAppContext().getResources().getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            image = BitmapFactory.decodeStream(is);
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+    }
 
     /**
      * 获取图片缩略图
