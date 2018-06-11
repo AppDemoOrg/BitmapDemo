@@ -5,6 +5,7 @@
 4、mipmap和drawable区别
 
 ### JPG/PNG占内存大小计算方式
+1、[jpg和png文件头，图片更改文件后缀名有什么影响](https://blog.csdn.net/qq_33436621/article/details/71038606)  
 
 ### 8888和565区别
 A：透明度，R：红色，G：绿，B：蓝   

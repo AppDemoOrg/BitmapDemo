@@ -18,7 +18,7 @@ import com.orhanobut.logger.Logger;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class BitmapBaseActivity extends AppCompatActivity {
 
     private static String mBasePath = "/sdcard/DCIM/Pisoft/Tmp/";
     private String mPath = "/sdcard/DCIM/Pisoft/180308_215326.jpeg";
