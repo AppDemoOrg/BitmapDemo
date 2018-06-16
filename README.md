@@ -1,24 +1,38 @@
-# BitmapDemo
 
-## TODO  
-3、加载大图   
-4、mipmap和drawable区别
+# BitmapDemo    
 
-### JPG/PNG占内存大小计算方式
-1、[jpg和png文件头，图片更改文件后缀名有什么影响](https://blog.csdn.net/qq_33436621/article/details/71038606)  
+## mipmap和drawable区别    
+1、mipmap主要用于存放icon    
+2、drawable存放xml\png\jpg\gif等   
 
-### 8888和565区别
-A：透明度，R：红色，G：绿，B：蓝   
-Bitmap.Config ARGB_4444：即A=4，R=4，G=4，B=4，那么一个像素点占4+4+4+4=16位   
-Bitmap.Config ARGB_8888：即A=8，R=8，G=8，B=8，那么一个像素点占8+8+8+8=32位    
-Bitmap.Config RGB_565：即R=5，G=6，B=5，没有透明度，那么一个像素点占5+6+5=16位   
-Bitmap.Config ALPHA_8：只有透明度，没有颜色，那么一个像素点占8=8位     
-一般情况下我们都是使用的ARGB_8888，由此可知它是最占内存的，    
-因为一个像素占32位，8位=1字节，所以一个像素占4字节的内存。   
-假设有一张480x800的图片，如果格式为ARGB_8888，那么将会占用1500KB的内存。   
+### 加载大图（世界地图、清明上河图、微博长图）     
+1、单个图片巨大，不允许压缩   
+2、局部加载BitmapRegionDecoder   
+3、把局部Rect拿到draw到Canvas上
+4、通过局部Rect限定显示内容，onTouchEvent更新Rect
+5、处理Rect与触摸事件，以及边处理
 
-## 参考文献
-1、[Bitmap,jpg,png区别以及在Android上实现不载入内存压缩图片](https://blog.csdn.net/zaizai2154365/article/details/70740623)    
-2、[android 一张图片占用的内存大小 ](http://blog.sina.com.cn/s/blog_96a1468901016hcw.html)    
-3、[BitMap优化最佳实践及官方Demo“图片墙”实例详解](https://blog.csdn.net/brillianteagle/article/details/50597201)    
-4、[Android中 mipmap与drawable区别](https://blog.csdn.net/userzhanghao123/article/details/70243872)  
+### 避免OOM       
+1、对于图片显示：根据需要显示图片控件的大小对图片进行压缩显示   
+2、如果图片数量非常多：则会使用LruCache等缓存机制，     
+3、将所有图片占据的内存维持在一个范围内，       
+
+### JPG/PNG占内存大小计算方式     
+1、[jpg和png文件头，图片更改文件后缀名有什么影响](https://blog.csdn.net/qq_33436621/article/details/71038606)    
+
+### 8888和565区别   
+A：透明度，R：红色，G：绿，B：蓝    
+Bitmap.Config ARGB_4444：即A=4，R=4，G=4，B=4，那么一个像素点占4+4+4+4=16位     
+Bitmap.Config ARGB_8888：即A=8，R=8，G=8，B=8，那么一个像素点占8+8+8+8=32位     
+Bitmap.Config RGB_565：即R=5，G=6，B=5，没有透明度，那么一个像素点占5+6+5=16位    
+Bitmap.Config ALPHA_8：只有透明度，没有颜色，那么一个像素点占8=8位      
+一般情况下我们都是使用的ARGB_8888，由此可知它是最占内存的，     
+因为一个像素占32位，8位=1字节，所以一个像素占4字节的内存。    
+假设有一张480x800的图片，如果格式为ARGB_8888，那么将会占用1500KB的内存。    
+
+## 参考文献   
+1、[Bitmap,jpg,png区别以及在Android上实现不载入内存压缩图片](https://blog.csdn.net/zaizai2154365/article/details/70740623)     
+2、[android一张图片占用的内存大小](http://blog.sina.com.cn/s/blog_96a1468901016hcw.html)     
+3、[BitMap优化最佳实践及官方Demo“图片墙”实例详解](https://blog.csdn.net/brillianteagle/article/details/50597201)     
+4、[Android中mipmap与drawable区别](https://blog.csdn.net/userzhanghao123/article/details/70243872)      
+5、[Android高清加载巨图方案拒绝压缩图片](https://blog.csdn.net/lmj623565791/article/details/49300989/)      
