@@ -1,7 +1,17 @@
 
-# BitmapDemo    
+## BitmapSample    
 
-## mipmap和drawable区别    
+### 如何加载Bitmap才是最好的
+
+### 图片缓存框架原理、源码、选型
+
+### 如何避免OOM或者内存泄漏
+
+### Pilot中跟Bitmap相关的疑难点，及解决方案
+
+### Bitmap的加载、Cahche、优化
+
+### mipmap和drawable区别    
 1、mipmap主要用于存放icon    
 2、drawable存放xml\png\jpg\gif等   
 
