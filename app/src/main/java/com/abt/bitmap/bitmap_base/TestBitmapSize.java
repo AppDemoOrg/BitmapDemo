@@ -1,4 +1,4 @@
-package com.abt.bitmap.test;
+package com.abt.bitmap.bitmap_base;
 
 import android.graphics.Bitmap;
 

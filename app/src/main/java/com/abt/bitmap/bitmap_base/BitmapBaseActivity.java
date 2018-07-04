@@ -1,4 +1,4 @@
-package com.abt.bitmap.activity;
+package com.abt.bitmap.bitmap_base;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,7 +11,6 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
-import com.abt.bitmap.test.TestBitmapSize;
 import com.abt.bitmap.util.BitmapUtil;
 import com.orhanobut.logger.Logger;
 

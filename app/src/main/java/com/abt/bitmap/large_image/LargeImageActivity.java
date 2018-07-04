@@ -1,10 +1,9 @@
-package com.abt.bitmap.activity;
+package com.abt.bitmap.large_image;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
-import com.abt.bitmap.large_image.LargeImageView;
 
 import java.io.IOException;
 import java.io.InputStream;

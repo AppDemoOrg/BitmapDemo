@@ -1,4 +1,4 @@
-package com.abt.bitmap;
+package com.abt.bitmap.app;
 
 import android.app.Application;
 import android.content.Context;

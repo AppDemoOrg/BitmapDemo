@@ -24,7 +24,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ImageConvertUtil {
+public class ImgConvertUtil {
 	
 	public static Bitmap drawableToBitmap(Drawable drawable) { 
 		if (drawable != null) {
@@ -116,7 +116,7 @@ public class ImageConvertUtil {
 
 	public static byte[] base64ToBytes(String base64) throws IOException {
 		if (base64 != null && !base64.equals("")) {
-			byte[] bytes = Base64.decode(base64);
+			byte[] bytes = Base64Util.decode(base64);
 			return bytes;
 		} else {
 			return null;
@@ -125,7 +125,7 @@ public class ImageConvertUtil {
 
 	public static String bytesToBase64(byte[] bytes) {
 		if (bytes != null && bytes.length > 0) {
-			String base64 = Base64.encode(bytes);
+			String base64 = Base64Util.encode(bytes);
 			return base64;
 		} else {
 			return null;

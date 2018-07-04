@@ -7,7 +7,7 @@ import android.graphics.BitmapFactory;
 import android.media.ThumbnailUtils;
 import android.text.TextUtils;
 
-import com.abt.bitmap.BitmapApp;
+import com.abt.bitmap.app.BitmapApp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
