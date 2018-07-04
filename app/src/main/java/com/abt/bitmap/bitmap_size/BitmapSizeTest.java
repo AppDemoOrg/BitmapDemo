@@ -6,11 +6,11 @@ import com.abt.bitmap.R;
 import com.abt.bitmap.util.BitmapUtil;
 
 /**
- * @描述： @TestBitmapSize
+ * @描述： @BitmapSizeTest
  * @作者： @黄卫旗
  * @创建时间： @05/06/2018
  */
-public class TestBitmapSize {
+public class BitmapSizeTest {
 
     /**
      * 测试结论：

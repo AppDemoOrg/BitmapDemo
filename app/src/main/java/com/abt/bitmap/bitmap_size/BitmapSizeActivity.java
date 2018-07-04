@@ -10,7 +10,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
-import com.abt.bitmap.in_simple_size.SimpleSizeUtil;
+import com.abt.bitmap.in_sample_size.SampleSizeUtil;
 import com.abt.bitmap.util.BitmapUtil;
 import com.orhanobut.logger.Logger;
 
@@ -25,15 +25,15 @@ public class BitmapSizeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_bitmap_size);
         //getSmallBitmap(mPath);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        TestBitmapSize.testFilePostfix();
-        TestBitmapSize.testFileLocation();
+        BitmapSizeTest.testFilePostfix();
+        BitmapSizeTest.testFileLocation();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB_MR1)
@@ -42,7 +42,7 @@ public class BitmapSizeActivity extends AppCompatActivity {
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(filePath, options);
         // Calculate inSampleSize
-        options.inSampleSize = SimpleSizeUtil.calculateInSampleSize(options, 480, 800);
+        options.inSampleSize = SampleSizeUtil.calculateInSampleSize(options, 480, 800);
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
 

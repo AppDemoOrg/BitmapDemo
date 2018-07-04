@@ -19,6 +19,9 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_large_image"
             android:theme="@style/FullscreenTheme">
+        </activity>
+
+        <activity android:name=".in_sample_size.SampleSizeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
