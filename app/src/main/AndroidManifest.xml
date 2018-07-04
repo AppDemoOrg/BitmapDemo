@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".bitmap_base.BitmapBaseActivity">
+        <activity android:name=".bitmap_size.BitmapSizeActivity">
         </activity>
 
         <activity

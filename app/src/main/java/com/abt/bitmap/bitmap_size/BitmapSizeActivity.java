@@ -1,6 +1,5 @@
-package com.abt.bitmap.bitmap_base;
+package com.abt.bitmap.bitmap_size;
 
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -11,13 +10,14 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 
 import com.abt.bitmap.R;
+import com.abt.bitmap.in_simple_size.SimpleSizeUtil;
 import com.abt.bitmap.util.BitmapUtil;
 import com.orhanobut.logger.Logger;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class BitmapBaseActivity extends AppCompatActivity {
+public class BitmapSizeActivity extends AppCompatActivity {
 
     private static String mBasePath = "/sdcard/DCIM/Pisoft/Tmp/";
     private String mPath = "/sdcard/DCIM/Pisoft/180308_215326.jpeg";
@@ -26,13 +26,6 @@ public class BitmapBaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true; // 这个属性保证了仅仅解析尺寸类型，而不必加载图片
-        BitmapFactory.decodeResource(getResources(), R.mipmap.xxhdpi, options);
-        int imageHeight = options.outHeight;
-        int imageWidth = options.outWidth;
-        String imageType = options.outMimeType;*/
-
         //getSmallBitmap(mPath);
     }
 
@@ -43,26 +36,13 @@ public class BitmapBaseActivity extends AppCompatActivity {
         TestBitmapSize.testFileLocation();
     }
 
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight) {
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB_MR1)
     public static Bitmap getSmallBitmap(String filePath) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(filePath, options);
         // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, 480, 800);
+        options.inSampleSize = SimpleSizeUtil.calculateInSampleSize(options, 480, 800);
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
 
@@ -124,23 +104,4 @@ public class BitmapBaseActivity extends AppCompatActivity {
         mtx.postRotate(rotate);
         return Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, true);
     }
-
-    private static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-            // Calculate ratios of height and width to requested height and width
-            final int heightRatio = Math.round((float) height / (float) reqHeight);
-            final int widthRatio = Math.round((float) width / (float) reqWidth);
-            // Choose the smallest ratio as inSampleSize value, this will guarantee
-            // a final image with both dimensions larger than or equal to the
-            // requested height and width.
-            inSampleSize = heightRatio < widthRatio ? widthRatio : heightRatio;
-        }
-        return inSampleSize;
-    }
-
 }
