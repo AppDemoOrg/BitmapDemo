@@ -4,32 +4,28 @@ import android.content.Context;
 import android.view.MotionEvent;
 
 /**
- * Created by zhy on 15/5/12.
+ * @描述： @手势监视器基类
+ * @作者： @黄卫旗
+ * @创建时间： @04/07/2018
  */
 public abstract class BaseGestureDetector {
 
     protected boolean mGestureInProgress;
-
     protected MotionEvent mPreMotionEvent;
     protected MotionEvent mCurrentMotionEvent;
-
     protected Context mContext;
 
     public BaseGestureDetector(Context context) {
         mContext = context;
     }
 
-
-    public boolean onToucEvent(MotionEvent event) {
-
+    public boolean onTouchEvent(MotionEvent event) {
         if (!mGestureInProgress) {
             handleStartProgressEvent(event);
         } else {
             handleInProgressEvent(event);
         }
-
         return true;
-
     }
 
     protected abstract void handleInProgressEvent(MotionEvent event);
@@ -49,6 +45,5 @@ public abstract class BaseGestureDetector {
         }
         mGestureInProgress = false;
     }
-
 
 }

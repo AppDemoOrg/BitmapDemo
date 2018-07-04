@@ -14,7 +14,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by zhy on 15/5/16.
+ * @描述： @加载大图片控件
+ * @作者： @黄卫旗
+ * @创建时间： @04/07/2018
  */
 public class LargeImageView extends View {
 
@@ -118,7 +120,7 @@ public class LargeImageView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        mDetector.onToucEvent(event);
+        mDetector.onTouchEvent(event);
         return true;
     }
 
