@@ -11,4 +11,4 @@
 - 从Android3.1开始，LruCache已经是Android源码的一部分了  
 
 
-### 
+### DiskLruCache

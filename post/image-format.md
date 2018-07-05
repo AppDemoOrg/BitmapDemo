@@ -40,3 +40,10 @@
 - 既保证图片质量和图片大小的需求下，WebP是首选
 - 主流app（微信、微博、淘宝）已经应用了WebP
 
+### JPG/PNG占内存大小计算方式     
+1、[jpg和png文件头，图片更改文件后缀名有什么影响](https://blog.csdn.net/qq_33436621/article/details/71038606)    
+
+
+### 参考文献
+1、[android一张图片占用的内存大小](http://blog.sina.com.cn/s/blog_96a1468901016hcw.html)     
+2、[Bitmap,jpg,png区别以及在Android上实现不载入内存压缩图片](https://blog.csdn.net/zaizai2154365/article/details/70740623)     

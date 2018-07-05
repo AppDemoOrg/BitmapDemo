@@ -8,6 +8,10 @@
 - Android-Universal-Image-Loader
 
 
+### 任务
+1、图片框架源码学习及使用
+
+
 ### BitmapFun
 - Android官方教程中的入门级图片框架
 - 早期使用较多，现已退出实际项目开发的舞台
