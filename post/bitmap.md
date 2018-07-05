@@ -8,6 +8,7 @@
 4、Bitmap按采用率缩放后，图像质量如何保证？    
 5、Bitmap与ImageView如何适配？     
 6、不同drawable目录下加载到不同图片尺寸，求Android资源加载机制。       
+7、图片框架源码学习及使用
 
 ### Bitmap的核心问题
 - 如何高效加载
